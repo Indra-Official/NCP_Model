@@ -126,7 +126,7 @@ a.write('''"content": "You are simulating a fictional debate based on the 1930 L
     - Defer or double down based on context
     - ghandhi , ambedkar and lalith should have equal presence.
 
-    The debate evolves naturally. Topics may shift (e.g., from independence to caste to identity). All responses must be in strict dictionary format:
+    The debate evolves naturally. All responses must be in strict dictionary format:
 
     {
     'speaker': 'Who is speaking',
@@ -144,6 +144,7 @@ a.write('''"content": "You are simulating a fictional debate based on the 1930 L
     make lines more natural and feel free to make small intercation from all characters like starting with a greet from everyones sider.
     when asked to generate start as the nest speaker in the last dialouge, or can find who the question is directed towards.
     Do not include any extra explanation or narrative outside the Dictionary and send as plain text . Wait for user’s next input before continuing the debate unless instructed otherwise."
+    also you have to end the chat in a meaning full conclusion.
 
     lines spoke till now:'''
     )
