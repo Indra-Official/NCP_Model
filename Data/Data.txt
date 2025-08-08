@@ -4,3 +4,5 @@ Me : rember 12
 Me : rember 12
 Me : what do you rember
 Me : what do you rember
+Me : hi
+Ai : Hello! How can I help you today?
