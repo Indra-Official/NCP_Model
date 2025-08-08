@@ -1,30 +1,44 @@
+
 import google.generativeai as genai
 
-def startai(npc,api):
+def startai(api):
     genai.configure(api_key=api)
     global model
     model = genai.GenerativeModel('gemini-2.5-pro')
-
 
 def chatbot(usr):
     response = model.generate_content(usr)
     print(response.text)
     return response.text
 
-startai("Mahathma Ghandhi","AIzaSyAVMiLgrqz-vSYKqdoDMpj-6IAyiDqlpfQ")
 
-a = open("Data/Data.txt", "a+")
+startai("AIzaSyDpY5jiECieuX5nNjJMxNywAiWZji9UbrM")
+me = True
 
 while True:
+    a = open("Data/Data.txt", "r")
     data = a.read()
-    usr = input("ME : ")
-    res = chatbot(str(data +"\n"+ usr))
+    if me:
+        usr = input("ME : ")
+    else:
+        usr= ""
 
+    out = chatbot(str(data +"\n"+ usr)).replace("```","").replace("json","").replace("\n","")
+    res = eval(out)
+    response = res["speaker"]+ " : "+ res["statement"]
+    print(response,"\n")
     data1 = "Me : " + usr
-    data2 = "Ai : " + res
-    
+    data2 = str(res)
+
+    if res['next_speaker'] == "":
+        me = True
+    else:
+        me = False
+
+    a = open("Data/Data.txt", "a")
     a.write(str(data1+"\n"))
     a.write(str(data2+"\n"))
+    a.close()
 
     if usr.lower() == "bye":
         break

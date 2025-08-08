@@ -1,0 +1,58 @@
+body {
+      margin: 0;
+      background: #121212;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+.Stage {
+      position: relative;
+      width: 72.5vw;
+      height: 70vh;
+    }
+
+.tag {
+      position: absolute;
+      width: 8vw;
+      height: 8vw;
+      border: 0.2vw solid orange;
+      color: orange;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 100vw;
+      background: transparent;
+    }
+
+.tag.purple {
+      border-color: violet;
+      color: violet;
+    }
+
+/* Positions on semi-circle */
+.tag1 { top: 33vh; left: 13.5vw;}
+.tag2 { top: 17vh; left: 21vw;}
+.tag3 { top: 9vh;  left: 32.5vw;}
+.tag4 { top: 17vh; left: 44vw;}
+.tag5 { top: 33vh; left: 53vw;}
+.tag6 { top: 50vh; left: 32.5vw;}
+
+.Audience {
+    position: absolute;
+    left: -10vw;
+    transform: rotate(-90deg);
+    color: white;
+    font-size: 8vw; 
+}
+
+.Officials {
+    position: absolute;
+    transform: rotate(90deg);
+    right: -9vw;
+    color: white;
+    font-size: 8vw; 
+}
