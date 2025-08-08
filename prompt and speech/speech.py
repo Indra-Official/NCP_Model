@@ -8,7 +8,7 @@ client = ElevenLabs(
 )
 
 def gandhi_t2s(msg):
-    voice_id = "VR6AewLTigWG4xSOukaG" #Adam
+    voice_id = "ybsn8GUgoNB8oDLyFqwG" #Adam
     audio = client.text_to_speech.convert(
         voice_id=voice_id,
         model_id="eleven_monolingual_v1",
@@ -20,7 +20,7 @@ def gandhi_t2s(msg):
     playsound.playsound("gandhi.mp3")
 
 def ambed_t2s(msg):
-    voice_id = "TxGEqnHWrfWFTfGW9XjX" #Josh
+    voice_id = "3gsg3cxXyFLcGIfNbM6C"
     audio = client.text_to_speech.convert(
         voice_id=voice_id,
         model_id="eleven_monolingual_v1",
@@ -33,7 +33,7 @@ def ambed_t2s(msg):
 
 
 def tej_t2s(msg):
-    voice_id = "21m00Tcm4TlvDq8ikWAM" #Arnold
+    voice_id = "VR6AewLTigWG4xSOukaG" #Adam
     audio = client.text_to_speech.convert(
         voice_id=voice_id,
         model_id="eleven_monolingual_v1",
@@ -46,7 +46,7 @@ def tej_t2s(msg):
 
 
 def mohommad_t2s(msg):
-    voice_id = "1m0aTcm4TlvDq8ikWA3N" #Sam
+    voice_id = "TxGEqnHWrfWFTfGW9XjX" #Josh
     audio = client.text_to_speech.convert(
         voice_id=voice_id,
         model_id="eleven_monolingual_v1",
@@ -59,7 +59,7 @@ def mohommad_t2s(msg):
 
 
 def ramsay_t2s(msg):
-    voice_id = "2mJ0S7gKgnOxmXk9YWAJ" #Mark
+    voice_id = "nXIYu9FT5meibkBbZFT7" #Adam
     audio = client.text_to_speech.convert(
         voice_id=voice_id,
         model_id="eleven_monolingual_v1",
@@ -69,3 +69,11 @@ def ramsay_t2s(msg):
         for chunk in audio:
             f.write(chunk)
     playsound.playsound("ramsay.mp3")
+
+
+
+gandhi_t2s("i am Mahathma gandhi")
+ambed_t2s("i am ambedkarr")
+'''tej_t2s("i am tej bahadurr")
+mohommad_t2s("i am muhammadd")'''
+ramsay_t2s("i am ramsay")
