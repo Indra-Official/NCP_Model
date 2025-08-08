@@ -4,7 +4,7 @@ import google.generativeai as genai
 def startai(api):
     genai.configure(api_key=api)
     global model
-    model = genai.GenerativeModel('gemini-2.5-pro')
+    model = genai.GenerativeModel('gemini-1.5-flash')
 
 def chatbot(usr):
     response = model.generate_content(usr)
@@ -16,7 +16,7 @@ startai("AIzaSyDpY5jiECieuX5nNjJMxNywAiWZji9UbrM")
 me = True
 
 while True:
-    a = open("Data/Data.txt", "r")
+    a = open("Data.txt", "r")
     data = a.read()
     if me:
         usr = input("ME : ")
@@ -35,7 +35,7 @@ while True:
     else:
         me = False
 
-    a = open("Data/Data.txt", "a")
+    a = open("Data.txt", "a")
     a.write(str(data1+"\n"))
     a.write(str(data2+"\n"))
     a.close()
