@@ -71,9 +71,14 @@ def ramsay_t2s(msg):
     playsound.playsound("ramsay.mp3")
 
 
-
-gandhi_t2s("i am Mahathma gandhi")
-ambed_t2s("i am ambedkarr")
-'''tej_t2s("i am tej bahadurr")
-mohommad_t2s("i am muhammadd")'''
-ramsay_t2s("i am ramsay")
+def voice(chra,msg):
+    if chra == "Gandhi":
+        gandhi_t2s(msg)
+    elif chra == "Ambedkar":
+        ambed_t2s(msg)
+    elif chra == "Jinnah":
+        mohommad_t2s(msg)
+    elif chra == "Ramsay MacDonald":
+        ramsay_t2s(msg)
+    elif chra == "Tej bahadur Supru":
+        tej_t2s(msg)
