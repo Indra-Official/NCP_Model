@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import google.generativeai as genai
-from elevenlabs.client import ElevenLabs
+from google.generativeai import ElevenLabs
 import playsound
-import os
 
 def gandhi_t2s(msg):
     client = ElevenLabs(
