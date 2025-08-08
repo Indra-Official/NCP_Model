@@ -8,7 +8,8 @@ Here’s a simple `README.md` file with proper Markdown syntax:
 Install the required packages using pip:
 
 ```bash
-pip install flask google-generativeai playsound
+pip install flask google-generativeai playsound elevenlabs.client
+
 ````
 
 ## Usage

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import google.generativeai as genai
-from google.generativeai import ElevenLabs
+from elevenlabs.client import ElevenLabs
 import playsound
 
 def gandhi_t2s(msg):
@@ -95,6 +95,8 @@ def voice(chra,response):
         tej_t2s(response)
 
 
+name = input("Your Name : ")
+
 def startai(api):
     genai.configure(api_key=api)
     global model
@@ -114,7 +116,7 @@ print("This is a debate betwwen AIs (Gandhi , Ambedkar, Jhinna, etc) and you the
 print("\n")
 
 a = open("Data.txt", "w")
-a.write('''"content": "You are simulating a fictional debate based on the 1930 London Round Table Conference. Participants include "Gandhi", "Ambedkar', "Jinnah", "Ramsay MacDonald", "Tej bahadur Supru", and "Lalith" (the user input). Lalith is an equal speaker, not a moderator it will be user input.
+a.write('''"content": "You are simulating a fictional debate based on the 1930 London Round Table Conference. Participants include "Gandhi", "Ambedkar', "Jinnah", "Ramsay MacDonald", "Tej bahadur Supru", and "{name}" (the user input). {name} is an equal speaker, not a moderator it will be user input.
 
     Characters can:
     - Speak openly to any other speaker
@@ -135,7 +137,8 @@ a.write('''"content": "You are simulating a fictional debate based on the 1930 L
     'alliance': 'Optional — who is teaming up and why'
     }
 
-    very important never write dialouges for Lalith.
+    very important never write dialouges for {name}.
+    and {name} should get a chance to speak every 2 or 3 dialouges.
 
     make there line short if its anything other than facts ot points.
     make lines more natural and feel free to make small intercation from all characters like starting with a greet from everyones sider.
@@ -151,12 +154,13 @@ while True:
         a = open("Data.txt", "r")
         data = a.read()
         if me:
-            usr = input("Lalith : ")
-            data1 = "Lalith : " + usr
+            usr = input(f"{name} : ")
+            data1 = f"{name} : " + usr
         else:
             usr= ""
 
-        out = chatbot(str(data +"\n"+ usr)).replace("```","").replace("json","").replace("\n","")
+        out = chatbot(str(data +"\n"+ usr))
+        out = out[out.index("{"):out.index("}")+1]
         res = eval(out)
 
         response = res["speaker"]+ " : "+ res["statement"]
@@ -167,7 +171,7 @@ while True:
 
         data2 = str(res)
 
-        if res['next_speaker'] == "Lalith":
+        if res['next_speaker'] == f"{name}":
             me = True
         else:
             me = False
