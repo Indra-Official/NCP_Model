@@ -21,5 +21,4 @@ python main.py
 
 ```
 
-Do you want me to also make this README include **a section for API key setup** in case your project needs one? That would make it more complete.
-```
+
