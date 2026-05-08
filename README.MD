@@ -1,6 +1,3 @@
-Here’s a simple `README.md` file with proper Markdown syntax:
-
-````markdown
 # Project Setup
 
 ## Installation
